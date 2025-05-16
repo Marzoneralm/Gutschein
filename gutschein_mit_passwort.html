@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Gutscheinzugang</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f0f0; text-align: center; padding-top: 100px; }
+        #content { display: none; margin-top: 20px; }
+        input[type="password"] { padding: 10px; font-size: 16px; }
+        button { padding: 10px 20px; font-size: 16px; }
+        .box { background: white; padding: 40px; border-radius: 8px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Bitte Passwort eingeben</h2>
+        <input type="password" id="password" placeholder="Passwort">
+        <button onclick="checkPassword()">Bestätigen</button>
+        <div id="content">
+            <h3>✅ Gutschein freigeschaltet!</h3>
+            <p>25 € Gutschein – Marzoner Alm – Nur für berechtigte Person</p>
+        </div>
+        <p id="error" style="color:red;"></p>
+    </div>
+    <script>
+        function checkPassword() {
+            var pw = document.getElementById("password").value;
+            if (pw === "1905") {
+                document.getElementById("content").style.display = "block";
+                document.getElementById("error").innerText = "";
+            } else {
+                document.getElementById("error").innerText = "❌ Falsches Passwort!";
+            }
+        }
+    </script>
+</body>
+</html>
